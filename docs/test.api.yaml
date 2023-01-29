@@ -1,0 +1,93 @@
+swagger: "2.0"
+tags:
+  name: Test-Api
+  description: test transactions
+
+paths:
+  /api/test/:
+    get:
+      summary: Users list api
+      tags: [ Test-Api]
+      responses:
+        200:
+          description: Api online
+        404:
+          description: Api error, probably database related
+
+    post:
+      summary: Insert new test data
+      tags: [ Test-Api]
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                field_test:
+                  type: string
+                  example: data test
+                  required: true
+                  description: string parameter
+      responses:
+        200:
+          description: Api online
+        404:
+          description: Api error, probably database related
+
+    put:
+      summary: Update test data
+      tags: [ Test-Api]
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                record_id:
+                  type: string
+                  example: 1
+                  required: true
+                  description: string parameter
+                field_test:
+                  type: string
+                  example: data test
+                  required: true
+                  description: string parameter
+      responses:
+        200:
+          description: Api online
+        404:
+          description: Api error, probably database related
+
+
+    delete:
+      summary: Delete test data
+      tags: [ Test-Api]
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                record_id:
+                  type: string
+                  example: 1
+                  required: true
+                  description: string parameter
+      responses:
+        200:
+          description: Api online
+        404:
+          description: Api error, probably database related

@@ -1,0 +1,103 @@
+swagger: "2.0"
+tags:
+  name: Process-Manager-Api
+  description: Process Manager transactions
+
+paths:
+  /api/process-manager/:
+    get:
+      summary: Process list api
+      tags: [ Process-Manager-Api]
+      responses:
+        200:
+          description: Api online
+        404:
+          description: Api error, probably database related
+
+    post:
+      summary: Insert new process data
+      tags: [ Process-Manager-Api]
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                service_name:
+                  type: string
+                  example: pm2 service 1
+                  required: true
+                  description: string parameter
+                service_status:
+                  type: string
+                  example: stopped
+                  required: true
+                  description: string parameter
+      responses:
+        200:
+          description: Api online
+        404:
+          description: Api error, probably database related
+
+    put:
+      summary: Update process data
+      tags: [ Process-Manager-Api]
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                record_id:
+                  type: string
+                  example: 1
+                  required: true
+                  description: string parameter
+                service_name:
+                  type: string
+                  example: pm2 service 1
+                  required: true
+                  description: string parameter
+                service_status:
+                  type: string
+                  example: stopped
+                  required: true
+                  description: string parameter
+      responses:
+        200:
+          description: Api online
+        404:
+          description: Api error, probably database related
+
+
+    delete:
+      summary: Delete process data
+      tags: [ Process-Manager-Api]
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                record_id:
+                  type: string
+                  example: 1
+                  required: true
+                  description: string parameter
+      responses:
+        200:
+          description: Api online
+        404:
+          description: Api error, probably database related
