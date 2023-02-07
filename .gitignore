@@ -3,6 +3,6 @@ uploads
 .vscode
 package-lock.json
 
-
+firebase.json
 logs/*
 !logs/.gitkeep
